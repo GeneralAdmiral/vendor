@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "noEmitOnError": true,
+    "outDir": "wwwroot/app/",
+    "inlineSourceMap": false
+  },
+  "exclude": [
+    "wwwroot",
+    "node_modules"
+  ]
+}

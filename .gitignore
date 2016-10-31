@@ -1,0 +1,69 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+src/vendor.ui/wwwroot/
+src/vendor.ui/source/app/js
+src/vendor.ui/bin
+src/vendor.ui/node_modules
+src/vendor.ui/obj
+src/vendor.domain/bin
+src/vendor.domain/obj
+src/vendor.logic/bin
+src/vendor.logic/obj
+.vs/
+#Visual Studio files
+*.[Oo]bj
+*.user
+*.aps
+*.pch
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+*.dbmdl
+*.pdb
+*.js.map
+*.dll
+*.pdb
+ipch/
+obj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+Ankh.NoLoad
+*.rdl.data
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
+#Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+
+#Project files
+[Bb]uild/
+#Subversion files
+.svn
+
+# Office Temp Files
+~$*
+
+.sass-cache/
+
+# npm files
+node_modules/
+src/vendor.ui/node_modules/
+
+# bpm files
+bower_components/

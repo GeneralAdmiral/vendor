@@ -1,0 +1,9 @@
+﻿<h3>Top Products</h3>
+<div class="grid grid-pad">
+    <div *ngFor="let product of products" (click)="gotoDetail(product)" class="col-1-4">
+        <div class="module hero">
+            <h4>{{product.name}}</h4>
+        </div>
+    </div>
+</div>
+<product-search></product-search>

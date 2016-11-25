@@ -71,6 +71,6 @@ gulp.task("_build:app", ["_build:css"], function () {
         .pipe(gulp.dest("wwwroot/app"));
 });
 
-gulp.task("default", ["clean:app","_build:app", "_build:css"], function () {
+gulp.task("default", ["clean:app","_build:app", "_build:css", "_build:libs"], function () {
    gulp.src(paths.src).pipe(gulp.dest("wwwroot/app"));
 });

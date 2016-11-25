@@ -12,7 +12,7 @@ var sourcemaps = require("gulp-sourcemaps");
 
 var tsProject = ts.createProject("tsconfig.json");
 var paths = {
-    src: ["source/configs/systemjs.config.js", "source/app/**/*.html"], //"source/app/**/*.ts", "source/app/**/*.js", "source/app/**/*.js.map", 
+    src: ["source/configs/systemjs.config.js", "source/app/**/*.html"], //"source/app/**/*.ts", "source/app/**/*.js", "source/app/**/*.js.map",
     libs: [
         "node_modules/@angular/core/bundles/core.umd.js",
         "node_modules/@angular/common/bundles/common.umd.js",
@@ -71,6 +71,6 @@ gulp.task("_build:app", ["_build:css"], function () {
         .pipe(gulp.dest("wwwroot/app"));
 });
 
-gulp.task("default", ["clean:app","_build:app", "_build:css", "_build:libs"], function () {
+gulp.task("default", ["clean:app","_build:app", "_build:css"], function () {
    gulp.src(paths.src).pipe(gulp.dest("wwwroot/app"));
 });

@@ -5,12 +5,15 @@
         "**/.git": true,
         "**/.svn": true,
         "**/.DS_Store": true,
-        "wwwroot/": true,
+        "wwwroot/": false,
         "node_modules/": true,
         "obj/": true,
         "**/*.orig": true,
         "logs/": true,
         "**/*.js": {
+            "when": "$(basename).ts"
+        },
+         "**/*.js.map": {
             "when": "$(basename).ts"
         }
     },

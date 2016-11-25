@@ -28,10 +28,28 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
-                "/Views": "${workspaceRoot}/wwwroot"
+                "/Views": "${workspaceRoot}/source/app"
             }
         },
-                {
+        {
+            "name": "Launch localhost with sourcemaps",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost",
+            "port": 9222,
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true
+
+        },
+        {
+            "name": "Attach with sourcemaps",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "sourceMaps": true,
+            "url": "http://localhost/dashboard"
+        },
+        {
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
@@ -48,7 +66,7 @@
             "request": "attach",
             "processId": "${command.pickProcess}"
         },
-                {
+        {
             "name": "Launch Chrome",
             "type": "chrome",
             "request": "launch",
@@ -66,6 +84,6 @@
                 "webpack:///webpack:///*": "${workspaceRoot}/*",
                 "webpack:///*": "${workspaceRoot}/*"
             }
-        },
+        }
     ]
 }

@@ -9,8 +9,8 @@
     "sourceMap": true,
     "target": "es5",
     "noEmitOnError": true,
-    "outDir": "wwwroot/app/",
-    "inlineSourceMap": false
+    "inlineSourceMap": false,
+    "outDir": "wwwroot/app/"
   },
   "exclude": [
     "wwwroot",

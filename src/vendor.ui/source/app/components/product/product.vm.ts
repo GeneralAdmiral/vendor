@@ -1,4 +1,5 @@
-﻿export class ProductViewModel {
-    id: number;
-    name: string;
+﻿import Product from "../../common/models/product.model";
+
+export class ProductViewModel {
+    public item: Product;
 }

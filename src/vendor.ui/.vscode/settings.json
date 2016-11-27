@@ -6,6 +6,8 @@
         "**/.svn": true,
         "**/.DS_Store": true,
         "wwwroot/": false,
+        "bin": true,
+        "project.lock.json": true,
         "node_modules/": true,
         "obj/": true,
         "**/*.orig": true,

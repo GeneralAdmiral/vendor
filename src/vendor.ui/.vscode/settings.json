@@ -8,7 +8,7 @@
         "wwwroot/": false,
         "bin": true,
         "project.lock.json": true,
-        "node_modules/": true,
+        "node_modules/": false,
         "obj/": true,
         "**/*.orig": true,
         "logs/": true,

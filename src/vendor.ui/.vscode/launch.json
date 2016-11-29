@@ -28,61 +28,7 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
-                "/Views": "${workspaceRoot}/source/app"
-            }
-        },
-        {
-            "name": "Launch localhost with sourcemaps",
-            "type": "chrome",
-            "request": "launch",
-            "url": "http://localhost",
-            "port": 9222,
-            "webRoot": "${workspaceRoot}",
-            "sourceMaps": true
-
-        },
-        {
-            "name": "Attach with sourcemaps",
-            "type": "chrome",
-            "request": "attach",
-            "port": 9222,
-            "sourceMaps": true,
-            "url": "http://localhost/dashboard"
-        },
-        {
-            "name": ".NET Core Launch (console)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp1.0/vendor.ui.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "stopAtEntry": false,
-            "externalConsole": false
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command.pickProcess}"
-        },
-        {
-            "name": "Launch Chrome",
-            "type": "chrome",
-            "request": "launch",
-            "runtimeArgs": [
-                "--remote-debugging-port=9222",
-                "--incognito"
-            ],
-            "url": "http://localhost:35674/policy/quote/755067",
-            "webRoot": "${workspaceRoot}",
-            "sourceMaps": true,
-            "userDataDir": "${workspaceRoot}/obj/chrome",
-            "port": 9222,
-            "sourceMapPathOverrides": {
-                "webpack:///./~/*": "${workspaceRoot}/node_modules/*",
-                "webpack:///webpack:///*": "${workspaceRoot}/*",
-                "webpack:///*": "${workspaceRoot}/*"
+                "/Views": "${workspaceRoot}/wwwroot/app"
             }
         }
     ]

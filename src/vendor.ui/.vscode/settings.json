@@ -15,7 +15,7 @@
         "**/*.js": {
             "when": "$(basename).ts"
         },
-         "**/*.js.map": {
+         "source/app/*.js.map": {
             "when": "$(basename).ts"
         }
     },

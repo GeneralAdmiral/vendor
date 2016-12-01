@@ -2,7 +2,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule }   from "@angular/forms";
 import { HttpModule }    from "@angular/http";
-import { MaterialModule } from "@angular/material";
+// import { MaterialModule } from "@angular/material";
 
 import { InMemoryWebApiModule } from "angular2-in-memory-web-api";
 import { InMemoryDataService }  from "../services/in-memory-data.service";
@@ -18,7 +18,7 @@ import "./rxjs-extensions";
 
 
 @NgModule(({
-    imports: [BrowserModule, FormsModule, routing, InMemoryWebApiModule.forRoot(InMemoryDataService), HttpModule, MaterialModule.forRoot()],
+    imports: [BrowserModule, FormsModule, routing, InMemoryWebApiModule.forRoot(InMemoryDataService), HttpModule /*, MaterialModule.forRoot()*/],
     declarations: [AppComponent, ProductComponent, ProductDetailComponent, DashboardComponent, ProductSearchComponent],
     providers: [ProductService],
     bootstrap: [AppComponent]

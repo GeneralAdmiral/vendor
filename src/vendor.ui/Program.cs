@@ -12,6 +12,7 @@ namespace vendor.ui
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:9222")
                 .Build();
 
             host.Run();

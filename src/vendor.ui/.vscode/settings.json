@@ -1,31 +1,25 @@
 {
-    "css.validate": false,
+    "css.validate": true,
     "typescript.validate.enable": true,
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.DS_Store": true,
         "wwwroot/": false,
         "bin": true,
         "project.lock.json": true,
-        "node_modules/": false,
+        "node_modules/": true,
+        "Properties/": true,
         "obj/": true,
-        "**/*.orig": true,
-        "logs/": true,
-        "**/*.js": {
-            "when": "$(basename).ts"
-        },
-         "source/app/*.js.map": {
-            "when": "$(basename).ts"
-        }
+        "**/*.orig": false,
+        "logs/": false
+        // "**/*.js": {
+        //     "when": "$(basename).ts"
+        // },
+        //  "source/app/*.js.map": {
+        //     "when": "$(basename).ts"
+        // }
     },
     "files.trimTrailingWhitespace": true,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "genGetSet.pathStringDelimiter": "\"",
     "autoimport.filesToScan": "./source/**/*.ts",
-    "autoimport.doubleQuotes": true,
-    "autoimport.spaceBetweenBraces": false,
-    "typescriptHero.resolver.pathStringDelimiter": "\"",
     "typescript.check.workspaceVersion": false
 }

@@ -1,9 +1,21 @@
 ﻿<h3>Top Products</h3>
 <div class="grid grid-pad">
-    <div *ngFor="let product of products" (click)="gotoDetail(product)" class="col-1-4">
+    <!--<div *ngFor="let product of products" (click)="gotoDetail(product)" class="col-1-4">
         <div class="module hero">
             <h4>{{product.name}}</h4>
         </div>
-    </div>
+    </div>-->
+
+<!--<md-card *ngFor="let product of products" (click)="gotoDetail(product)" class="col-1-4">
+   <md-card-header>
+      <img md-card-avatar src="../../../content/d.png">
+      <md-card-title>Header title</md-card-title>
+      <md-card-subtitle>{{product.name}}</md-card-subtitle>
+   </md-card-header>
+   <img md-card-image src="../../../content/d.png">
+   <md-card-content>
+      <p>Here is some more content</p>
+   </md-card-content>
+</md-card>-->
 </div>
 <product-search></product-search>

@@ -24,6 +24,12 @@
             '@angular/http': 'npm:@angular/http.umd.js',
             '@angular/router': 'npm:@angular/router.umd.js',
             '@angular/forms': 'npm:@angular/forms.umd.js',
+            '@angular/material': 'npm:angular/material.umd.js',
+
+//               '@angular/material/core': 'npm:@angular2-material/core/core.umd.js',
+//   '@angular/material/card': 'npm:@angular2-material/card/card.umd.js',
+//   '@angular/material/button': 'npm:@angular2-material/button/button.umd.js',
+//   '@angular/material/icon': 'npm:@angular2-material/icon/icon.umd.js',
 
             //'@angular/core': 'npm:@angular/core/bundles/core.umd.js',
             //'@angular/common': 'npm:@angular/common/bundles/common.umd.js',
@@ -35,6 +41,7 @@
             //'@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
             // other libraries
+            // 'material': 'npm:material',
             'rxjs': 'npm:rxjs',
             'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
         },
@@ -44,6 +51,9 @@
                 main: './main.js',
                 defaultExtension: 'js'
             },
+            // material:{
+            //     defaultExtension: 'js'
+            // },
             rxjs: {
                 defaultExtension: 'js'
             },

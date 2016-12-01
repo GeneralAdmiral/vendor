@@ -22,11 +22,16 @@ var paths = {
         "node_modules/@angular/http/bundles/http.umd.js",
         "node_modules/@angular/router/bundles/router.umd.js",
         "node_modules/@angular/forms/bundles/forms.umd.js"
+        ,
+        "node_modules/@angular/material/material.umd.js"
 
         //"node_modules/reflect-metadata/Reflect.js",
         //"node_modules/zone.js/dist/zone.js",
         //"node_modules/core-js/client/shim.min.js"
     ],
+    // material:[
+    //     "node_modules/@angular/material/**/*.js"
+    // ],
     rxjs: [
         "node_modules/rxjs/**/*.js"
     ],
@@ -44,8 +49,9 @@ gulp.task("clean:libs", function () {
     return del(["wwwroot/libs/**/*"]);
 });
 
-gulp.task("_build:libs", function () {
+gulp.task("_build:libs",["clean:libs"], function () {
     gulp.src(paths.libs).pipe(gulp.dest("wwwroot/libs/@angular"));
+    // gulp.src(paths.material).pipe(gulp.dest('wwwroot/libs/@angular/material'))
     gulp.src(paths.rxjs).pipe(gulp.dest("wwwroot/libs/rxjs"));
     gulp.src(paths.webapi).pipe(gulp.dest("wwwroot/libs/angular2-in-memory-web-api"));
 });

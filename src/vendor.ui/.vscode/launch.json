@@ -10,6 +10,17 @@
             "args": [],
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
+            "logging": {
+                "engineLogging": true,
+                "exceptions": true,
+                "moduleLoad": true,
+                "programOutput": true,
+                "trace": true,
+                "traceResponse": true
+            },
+            "sourceFileMap": {
+                "D:/repositories/vendor/src/wwwroot/app": "/wwwroot/app"
+            },
             "launchBrowser": {
                 "enabled": true,
                 "args": "${auto-detect-url}",
@@ -26,10 +37,41 @@
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
-            },
-            "sourceFileMap": {
-                "/Views": "${workspaceRoot}/wwwroot/app"
             }
+        },
+                {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp1.0/vendor.ui.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "externalConsole": false
+        },
+        {
+            "name": "Launch Chrome against localhost, with sourcemaps",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:9222",
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}/wwwroot",
+            "diagnosticLogging": true,
+            "runtimeArgs": [
+                "--remote-debugging-port=9222",
+                "--incognito"
+            ],
+            "port": 9222
+        },
+        {
+            "name": "Attach to Chrome, with sourcemaps",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "sourceMaps": true,
+            "diagnosticLogging": true,
+            "webRoot": "${workspaceRoot}/wwwroot"
         }
     ]
 }

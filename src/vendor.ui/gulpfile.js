@@ -38,7 +38,8 @@ var paths = {
     webapi: [
         "node_modules/angular2-in-memory-web-api/**/*.js"
     ],
-    css: ["source/app/**/*.css"]
+    css: ["source/app/**/*.css"],
+    content: "source/content/**/*"
 };
 
 gulp.task("clean:app", function () {
@@ -54,6 +55,7 @@ gulp.task("_build:libs",["clean:libs"], function () {
     // gulp.src(paths.material).pipe(gulp.dest('wwwroot/libs/@angular/material'))
     gulp.src(paths.rxjs).pipe(gulp.dest("wwwroot/libs/rxjs"));
     gulp.src(paths.webapi).pipe(gulp.dest("wwwroot/libs/angular2-in-memory-web-api"));
+    gulp.src(paths.content).pipe(gulp.dest("wwwroot/content"));
 });
 
 gulp.task("_build:css", function () {

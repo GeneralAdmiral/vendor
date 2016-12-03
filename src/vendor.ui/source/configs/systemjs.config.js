@@ -24,7 +24,7 @@
             '@angular/http': 'npm:@angular/http.umd.js',
             '@angular/router': 'npm:@angular/router.umd.js',
             '@angular/forms': 'npm:@angular/forms.umd.js',
-            '@angular/material': 'npm:angular/material.umd.js',
+            '@angular/material': 'npm:@angular/material.umd.js',
 
 //               '@angular/material/core': 'npm:@angular2-material/core/core.umd.js',
 //   '@angular/material/card': 'npm:@angular2-material/card/card.umd.js',

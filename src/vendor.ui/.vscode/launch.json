@@ -2,6 +2,41 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222"
+            ],
+            "url": "http://localhost:5000/",
+            "webRoot": "${workspaceRoot}\\wwwroot\\app",
+            "sourceMaps": true,
+            "userDataDir": "${workspaceRoot}/obj/chrome",
+            "port": 9222,
+            "diagnosticLogging": true
+        },
+        {
+            "name": "Launch Chrome against localhost, with sourcemaps",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://127.0.0.1:5000/",
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}/wwwroot/app",
+            "diagnosticLogging": true
+        },
+        {
+            "name": "Attach to Chrome, with sourcemaps",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}",
+            "diagnosticLogging": true,
+            "sourceMapPathOverrides": {
+                "source": "${workspaceRoot}/wwwroot/app"
+            }
+        },
+                {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
@@ -38,40 +73,6 @@
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             }
-        },
-                {
-            "name": ".NET Core Launch (console)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp1.0/vendor.ui.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "stopAtEntry": false,
-            "externalConsole": false
-        },
-        {
-            "name": "Launch Chrome against localhost, with sourcemaps",
-            "type": "chrome",
-            "request": "launch",
-            "url": "http://localhost:9222",
-            "sourceMaps": true,
-            "webRoot": "${workspaceRoot}/wwwroot",
-            "diagnosticLogging": true,
-            "runtimeArgs": [
-                "--remote-debugging-port=9222",
-                "--incognito"
-            ],
-            "port": 9222
-        },
-        {
-            "name": "Attach to Chrome, with sourcemaps",
-            "type": "chrome",
-            "request": "attach",
-            "port": 9222,
-            "sourceMaps": true,
-            "diagnosticLogging": true,
-            "webRoot": "${workspaceRoot}/wwwroot"
         }
     ]
 }

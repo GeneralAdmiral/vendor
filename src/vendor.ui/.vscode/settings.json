@@ -7,7 +7,7 @@
         "project.lock.json": true,
         "node_modules/": true,
         "Properties/": true,
-        "obj/": true,
+        "obj/": false,
         "**/*.orig": false,
         "logs/": false
         // "**/*.js": {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace vendor.domain.entities.manytomany
+﻿namespace vendor.domain.entities.manytomany
 {
     public class ProductLanguage
     {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using vendor.domain.entities;
@@ -62,6 +61,6 @@ namespace vendor.ui.controllers
         }
 
 
-       
+
     }
 }

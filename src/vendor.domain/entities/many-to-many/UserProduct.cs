@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace vendor.domain.entities.manytomany
+﻿namespace vendor.domain.entities.manytomany
 {
     public class UserProduct
     {

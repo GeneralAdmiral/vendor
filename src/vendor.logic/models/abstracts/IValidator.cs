@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using vendor.logic.models.concretes;
 
 namespace vendor.logic.models.abstracts

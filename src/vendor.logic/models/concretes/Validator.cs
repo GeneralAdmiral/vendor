@@ -1,14 +1,11 @@
 ﻿
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using vendor.domain.entities;
 using vendor.logic.models.abstracts;
 
 namespace vendor.logic.models.concretes
 {
     public class Validator : IValidator
-    { 
+    {
         public ValidationResult IsToDayUpDate(DateTime entry, ValidationResult validResult)
         {
             if (!entry.Day.Equals(DateTime.Now.Day))

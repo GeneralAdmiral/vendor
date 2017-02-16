@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace vendor.domain.data.abstracts
+﻿namespace vendor.domain.data.abstracts
 {
     /// <summary>
     /// always need to add to a 'ignore' the 'ComplexKeys' property in 'OnModelCreating' method.

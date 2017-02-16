@@ -1,12 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Threading;
 using System.Threading.Tasks;
 using vendor.domain.data.abstracts;
-using vendor.domain.entities;
 using vendor.logic.models.abstracts;
 
 namespace vendor.logic.models.concretes

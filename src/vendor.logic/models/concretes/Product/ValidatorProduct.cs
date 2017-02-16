@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using vendor.domain.entities;
+﻿using vendor.domain.entities;
 using vendor.logic.models.abstracts;
 
 namespace vendor.logic.models.concretes

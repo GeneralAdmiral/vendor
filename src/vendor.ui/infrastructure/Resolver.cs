@@ -5,7 +5,6 @@ using vendor.domain.entities;
 using vendor.domain.data.concretes;
 using vendor.logic.models.concretes;
 using vendor.logic.models.abstracts;
-using vendor.domain.entities.manytomany;
 
 namespace vendor.ui.infrastructure
 {

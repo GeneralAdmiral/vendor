@@ -9,16 +9,15 @@ namespace vendor.domain.data.abstracts
 {
     public interface IRepository<TEntity> :  IDisposable where TEntity : IEntity
     {
-        DbSet<TDbSet> Set<TDbSet>() where TDbSet : class;
+        DbSet<TEntity> Set<TEntity>() where TEntity : class;
 
-        EntityEntry<TDbSet> Entry<TDbSet>(TDbSet entity) where TDbSet : class;
+        EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
 
         Task<TEntity> GetAsync(long entryId);
 
         Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filer);
-        Task<IEnumerable<TEntity>> ListAsync();
 
-        Task<IEnumerable<TEntity>> ListAsync(Expression<Func<TEntity, bool>> filer);
+        Task<IEnumerable<TEntity>> ListAsync(Expression<Func<TEntity, bool>> filer = null);
 
         Task<long> AddAsync(TEntity entry);
 
@@ -27,5 +26,7 @@ namespace vendor.domain.data.abstracts
         Task<long> PutAsync(TEntity enty);
 
         Task<long> DeleteAsync(TEntity entry);
+
+        Task<int> SaveChangesAsync();
     }
 }

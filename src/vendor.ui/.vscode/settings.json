@@ -7,7 +7,7 @@
         "project.lock.json": true,
         "node_modules/": true,
         "Properties/": true,
-        "obj/": false,
+        "obj/": true,
         "**/*.orig": false,
         "logs/": false
         // "**/*.js": {
@@ -20,6 +20,6 @@
     "files.trimTrailingWhitespace": true,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "autoimport.filesToScan": "./source/**/*.ts",
+    // "autoimport.filesToScan": "./source/**/*.ts",
     "typescript.check.workspaceVersion": false
 }

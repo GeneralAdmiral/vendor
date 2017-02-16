@@ -13,7 +13,7 @@ namespace vendor.domain.data.concretes
         where TEntity : class, IEntity
     {
         private readonly VendorDbContext _context;
-        private readonly IQueryable<TEntity> _set;
+        private readonly DbSet<TEntity> _set;
 
         public Repository(VendorDbContext context)
         {
@@ -23,26 +23,30 @@ namespace vendor.domain.data.concretes
 
         #region implementation IRepositoryAsync
 
-        public virtual EntityEntry<TDbSet> Entry<TDbSet>(TDbSet entity) where TDbSet : class
+        public async Task<TEntity> GetAsync(long entryId)
         {
-            return this._context.Entry(entity);
+            return await this._set.SingleOrDefaultAsync(x => x.Id == entryId);
         }
 
-        public virtual async Task<TEntity> GetAsync(long entryId)
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
         {
-            return await this._context.Set<TEntity>().SingleOrDefaultAsync(x => x.Id == entryId);
+            return await this._set.SingleOrDefaultAsync(filter);
         }
 
-        public virtual async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
+        public async Task<IEnumerable<TEntity>> ListAsync(Expression<Func<TEntity, bool>> filter = null)
         {
-            return await this._context.Set<TEntity>().FirstOrDefaultAsync(filter);
+            if(filter != null)
+            {
+                return await this._set.Where(filter).ToListAsync();
+            }
+            return await this._set.ToListAsync();
         }
 
-        public virtual async Task<long> AddAsync(TEntity entry)
+        public async Task<long> AddAsync(TEntity entry)
         {
             if (entry.Id == 0)
             {
-                entry.Id = this._context.Set<TEntity>().Add(entry).Entity.Id;
+                entry.Id = this._set.Add(entry).Entity.Id;
 
                 try
                 {
@@ -58,21 +62,11 @@ namespace vendor.domain.data.concretes
             return entry.Id;
         }
 
-        public virtual async Task<IEnumerable<TEntity>> ListAsync()
-        {
-            return await this._context.Set<TEntity>().ToListAsync();
-        }
-
-        public virtual async Task<IEnumerable<TEntity>> ListAsync(Expression<Func<TEntity, bool>> filter)
-        {
-            return await _context.Set<TEntity>().Where(filter).ToListAsync();
-        }
-
-        public virtual async Task<long> UpdateAsync(TEntity entry)
+        public async Task<long> UpdateAsync(TEntity entry)
         {
             if (entry.Id >= 0)
             {
-                entry.Id = this._context.Set<TEntity>().Update(entry).Entity.Id;
+                entry.Id = this._set.Update(entry).Entity.Id;
 
                 try
                 {
@@ -88,7 +82,7 @@ namespace vendor.domain.data.concretes
             return entry.Id;
         }
 
-        public virtual async Task<long> PutAsync(TEntity entry)
+        public async Task<long> PutAsync(TEntity entry)
         {
             if (entry.Id >= 0)
             {
@@ -108,11 +102,11 @@ namespace vendor.domain.data.concretes
             return entry.Id;
         }
 
-        public virtual async Task<long> DeleteAsync(TEntity entry)
+        public async Task<long> DeleteAsync(TEntity entry)
         {
             if (entry.Id >= 0)
             {
-                entry.Id = this._context.Set<TEntity>().Remove(entry).Entity.Id;
+                entry.Id = this._set.Remove(entry).Entity.Id;
 
                 try
                 {
@@ -128,9 +122,19 @@ namespace vendor.domain.data.concretes
             return entry.Id;
         }
 
-        public DbSet<TDbSet> Set<TDbSet>() where TDbSet : class
+        public EntityEntry<TDbSet> Entry<TDbSet>(TDbSet entity) where TDbSet : class
         {
-            return this._context.Set<TDbSet>();
+            return this._context.Entry(entity);
+        }
+
+        public DbSet<TEntity> Set<TEntity>() where TEntity : class
+        {
+            return _context.Set<TEntity>();
+        }
+
+        public async Task<int> SaveChangesAsync()
+        {
+            return await this._context.SaveChangesAsync();
         }
 
         #endregion
@@ -164,7 +168,8 @@ namespace vendor.domain.data.concretes
         public void Dispose()
         {
             this._context.Dispose();
-            //GC.SuppressFinalize(this);
+
+            GC.SuppressFinalize(this);
         }
 
         //public IEnumerator<TEntity> GetEnumerator()

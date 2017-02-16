@@ -1,15 +1,15 @@
-﻿import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { Observable } from "rxjs/Observable";
-import { Subject } from "rxjs/Subject";
-import { ProductSearchService } from "../../services/product-search.service";
-import { Product } from "../../common/models/product.model";
+﻿import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { ProductSearchService } from '../../services/product-search.service';
+import { Product } from '../../common/models/product.model';
 
 @Component({
     moduleId: module.id,
-    selector: "product-search",
-    templateUrl: "product-search.component.html",
-    styleUrls: ["product-search.component.css"],
+    selector: 'product-search',
+    templateUrl: './app/components/product/product-search.component.html',
+    styleUrls: ['./app/components/product/product-search.component.css'],
     providers: [ProductSearchService]
 })
 export class ProductSearchComponent implements OnInit {
@@ -43,7 +43,7 @@ export class ProductSearchComponent implements OnInit {
     }
 
     gotoDetail(product: Product): void {
-        let link = ["/detail", product.id];
+        let link = ['/detail', product.id];
         this.router.navigate(link);
     }
 }

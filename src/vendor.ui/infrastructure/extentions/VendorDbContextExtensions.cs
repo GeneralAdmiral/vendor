@@ -23,15 +23,49 @@ namespace vendor.ui.controllers.extentions
                             LockoutEnabled = false,
                             Image = null,
                             RegisterDate = DateTime.Now,
-                            UpdateDate = DateTime.Now
+                            Update = DateTime.Now
                         });
                     context.SaveChanges();
                 }
-                if (!context.LanguageDict.Any())
+                if (!context.Languages.Any())
                 {
-                    context.LanguageDict.AddRange(
-                        new LanguageDict { Name = "Русский", Alias = "ru-RU", IsDefault = true, UpdateDate = DateTime.Now, UpdateUserId = 1 },
-                        new LanguageDict { Name = "English", Alias = "en-US", IsDefault = false, UpdateDate = DateTime.Now, UpdateUserId = 1 });
+                    context.Languages.AddRange(
+                        new Language
+                        {
+                            Name = "Русский",
+                            Alias = "ru-RU",
+                            IsDefault = true,
+                            Update = DateTime.Now,
+                            UserUpDateId = 1
+                        },
+                        new Language
+                        {
+                            Name = "English",
+                            Alias = "en-US",
+                            IsDefault = false,
+                            Update = DateTime.Now,
+                            UserUpDateId = 1
+                        });
+
+                    context.SaveChanges();
+                }
+                if (!context.Products.Any())
+                {
+                    context.Products.AddRange(
+                        new Product
+                        {
+                            // Name = "DetailOne",
+                            // Description = "The first detail",
+                            // Update = DateTime.Now,
+                            UserUpdateId = 1
+                        },
+                        new Product
+                        {
+                            // Name = "DetailTwo",
+                            // Description = "The second detail",
+                            // Update = DateTime.Now,
+                            UserUpdateId = 1
+                        });
 
                     context.SaveChanges();
                 }

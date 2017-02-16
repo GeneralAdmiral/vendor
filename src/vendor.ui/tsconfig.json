@@ -9,8 +9,9 @@
     "sourceMap": true,
     "target": "es5",
     "noEmitOnError": true,
-    "inlineSourceMap": true,
-    "inlineSources": true
+    "inlineSources": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "isolatedModules": false
   },
   "exclude": [
     "node_modules"

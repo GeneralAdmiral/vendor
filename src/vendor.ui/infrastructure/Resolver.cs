@@ -5,6 +5,7 @@ using vendor.domain.entities;
 using vendor.domain.data.concretes;
 using vendor.logic.models.concretes;
 using vendor.logic.models.abstracts;
+using vendor.domain.entities.manytomany;
 
 namespace vendor.ui.infrastructure
 {
@@ -18,7 +19,16 @@ namespace vendor.ui.infrastructure
 
                 services.AddScoped<IRepository<Product>, Repository<Product>>();
 
-                services.AddScoped<IProductModel, ProductModel>();
+                services.AddScoped<IModelProduct, ProductModel>();
+
+                services.AddScoped<IValidatorProduct, ValidatorProduct>();
+
+                services.AddScoped<IModel<Product>, Model<Product>>();
+
+                // services.AddScoped<IModel<UserProduct>, Model<UserProduct>>();
+
+                services.AddScoped<IValidator, Validator>();
+
             }
             catch (System.Exception ex)
             {

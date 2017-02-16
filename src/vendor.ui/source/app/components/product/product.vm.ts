@@ -1,4 +1,4 @@
-﻿import { Product } from "../../common/models/product.model";
+﻿import { Product } from '../../common/models/product.model';
 export class ProductViewModel {
-    public item: Product;
+    item: Product;
 }

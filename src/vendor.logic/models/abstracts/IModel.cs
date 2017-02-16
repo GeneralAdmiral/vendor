@@ -1,20 +1,18 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Threading;
-using System.Threading.Tasks;
-using vendor.domain.data.abstracts;
 
 namespace vendor.logic.models.abstracts
 {
-    public interface IModel<T>
+    public interface IModel<TEntity> : IDisposable where TEntity: class
     {
-        T Get(Expression<Func<T, bool>> filter);
-        IEnumerable<T> List(Expression<Func<T, bool>> filter = null);
-        bool Add(T entry);
-        bool Update(T entry);
-        bool Delete();
-        bool Validate(T entry);
+        DbSet<TEntity> Set { get; set; }
+        TEntity Get(Expression<Func<TEntity, bool>> filter);
+        IEnumerable<TEntity> List(Expression<Func<TEntity, bool>> filter = null);
+        bool Add(TEntity entry);
+        bool Update(TEntity entry);
+        bool Delete(long id);
+        int SaveChange();
     }
 }

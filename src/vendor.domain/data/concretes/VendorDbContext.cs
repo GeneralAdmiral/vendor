@@ -1,43 +1,30 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using vendor.domain.entities;
+using vendor.domain.entities.manytomany;
 
 namespace vendor.domain.data.concretes
 {
 
-    public class VendorDbContext : IdentityDbContext<User, Role, long>//, UserClaim, UserRole, UserLogin, RoleClaim, UserToken> 
+    public class VendorDbContext : IdentityDbContext<User, Role, long> //, UserClaim, UserRole, UserLogin, RoleClaim, UserToken> 
     {
         public VendorDbContext(DbContextOptions<VendorDbContext> options)
-            : base(options)
-        {
-
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            //options.UseSqlServer(@"Server=localhost;Database=VendorDb;Trusted_Connection=True;MultipleActiveResultSets=true"); "Host=localhost;Port=5432;Database=vendor;Pooling=true;"
-        }
+            : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
-            builder.Entity<User>(entity => entity.ToTable("Users"));
-
-            builder.Entity<Role>(entity => entity.ToTable("Roles"));
-
-            builder.Entity<UserRole>(entity => entity.ToTable("UserRoles"));
-
-            builder.Entity<UserLogin>(entity => entity.ToTable("UserLogins"));
-
-            builder.Entity<UserClaim>(entity => entity.ToTable("UserClaims"));
-
-            builder.Entity<RoleClaim>(entity => entity.ToTable("RoleClaims"));
-
-            builder.Entity<UserToken>(entity => entity.ToTable("UserTokens"));
+            builder.OnModelCreatingSeed();
         }
 
-        public virtual DbSet<LanguageDict> LanguageDict { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Product> Products { get; set; }
+
+        // Many to many
+        // public DbSet<UserLanguage> UserLanguages { get; set; }
+        public DbSet<ProductLanguage> ProductLanguages { get; set; }
+        public DbSet<UserProduct> UserProducts { get; set; }
+
     }
 }
 
@@ -47,7 +34,7 @@ namespace vendor.domain.data.concretes
 //using System.Linq;
 //using DomainModel.Model;
 //using Microsoft.EntityFrameworkCore;
- 
+
 //namespace DataAccessPostgreSqlProvider
 //{
 //    // >dotnet ef migration add testMigration in AspNet5MultipleProject

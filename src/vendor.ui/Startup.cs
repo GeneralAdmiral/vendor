@@ -66,7 +66,6 @@ namespace vendor.ui
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 

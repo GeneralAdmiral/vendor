@@ -3,14 +3,14 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 
-import { Product } from "../../common/models/product.model";
+import { Product } from '../../common/models/product.model';
 import { ProductService } from '../../services/product.service';
 
 @Component({
     moduleId: module.id,
-    selector: "my-product-detail",
-    templateUrl: "product-detail.component.html",
-    styleUrls: ["product-detail.component.css"]
+    selector: 'my-product-detail',
+    templateUrl: './app/components/product/product-detail.component.html',
+    styleUrls: ['./app/components/product/product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
     constructor(

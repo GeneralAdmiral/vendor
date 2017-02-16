@@ -14,6 +14,6 @@ namespace vendor.domain.entities
             this.Name = roleName;
         }
         
-        public DateTime UpdDate { get; set; }
+        public DateTime Update { get; set; }
     }
 }

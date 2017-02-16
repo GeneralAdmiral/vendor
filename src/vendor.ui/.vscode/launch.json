@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Launch Chrome",
             "type": "chrome",
@@ -9,8 +10,8 @@
                 "--remote-debugging-port=9222"
             ],
             "url": "http://localhost:5000/",
-            "webRoot": "${workspaceRoot}\\wwwroot\\app",
-            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}/wwwroot/app",
+            "sourceMaps": false,
             "userDataDir": "${workspaceRoot}/obj/chrome",
             "port": 9222,
             "diagnosticLogging": true
@@ -36,7 +37,7 @@
                 "source": "${workspaceRoot}/wwwroot/app"
             }
         },
-                {
+        {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
@@ -73,6 +74,14 @@
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             }
+        },
+        {
+            "name": "Launch edge",
+            "type": "edge",
+            "request": "launch",
+            "url": "http://localhost:5000/",
+            "webRoot": "${workspaceRoot}/source/app",
+            "sourceMaps": true
         }
     ]
 }

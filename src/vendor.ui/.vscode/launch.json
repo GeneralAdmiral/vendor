@@ -1,12 +1,13 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "chrome",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "tsc",
             "name": "Launch Chrome",
-            "url": "http://localhost:8080",
+            "url": "http://localhost:5000/",
             "webRoot": "${workspaceRoot}"
         },
         // {
@@ -62,7 +63,7 @@
                 "traceResponse": true
             },
             "sourceFileMap": {
-                "D:/repositories/vendor/src/wwwroot/app": "/wwwroot/app"
+                 "/Views": "${workspaceRoot}/wwwroot/app"
             },
             "launchBrowser": {
                 "enabled": true,

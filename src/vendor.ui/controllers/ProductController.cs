@@ -20,7 +20,7 @@ namespace vendor.ui.controllers
 
         [HttpGet("list")]
         public IEnumerable<Product> List()
-        {
+        { 
             // return this._model.List(null);
             return new Product[] { };
         }
